@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">quiniGen</string>
     <string name="action_settings">Settings</string>
-    <string name="btn_principal">ver tú numero de la suerte</string>
+    <string name="btn_principal">ver tú número de la suerte</string>
+    <string name="btn_save">Guardar tu jugada</string>
+    <string name="chkb_j1">Apuesta en Quini6</string>
+    <string name="chkb_j2">Apuesta en Loto</string>
+    <string name="chkb_j3">Apuesta en Brinco</string>
 </resources>

@@ -15,6 +15,27 @@
         android:layout_weight="0.05"
         android:text="@string/btn_principal" />
 
+    <CheckBox
+        android:id="@+id/checkBox_jugada1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:text="@string/chkb_j1" />
+
+    <CheckBox
+        android:id="@+id/checkBox_jugada2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:text="@string/chkb_j2" />
+
+    <CheckBox
+        android:id="@+id/checkBox_jugada3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:text="@string/chkb_j3" />
+
     <EditText
         android:id="@+id/txtNumAleatorio"
         android:layout_width="match_parent"
@@ -23,5 +44,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:text="@string/btn_save" />
 
 </LinearLayout>

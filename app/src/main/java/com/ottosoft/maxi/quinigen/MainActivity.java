@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.Formatter;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -22,12 +24,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     CheckBox jugada1 , jugada2 , jugada3;
 
+    Integer rango;
+    String param_0;
+    //Formatter fmt = new Formatter(); // Clase para formatear el numero y completar con ceros
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Rango
+        rango = 0;
+
+        // Controles
         edtTxt = (EditText) findViewById(R.id.txtNumAleatorio);
         btnPrincipal = (Button) findViewById(R.id.btnPrincipal);
 
@@ -35,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         jugada2 = (CheckBox) findViewById(R.id.checkBox_jugada2);
         jugada3 = (CheckBox) findViewById(R.id.checkBox_jugada3);
 
-
+        // Aca defino los listener para detectar los clicks en cada control
         btnPrincipal.setOnClickListener(this);
         jugada1.setOnClickListener(this);
         jugada2.setOnClickListener(this);
@@ -65,16 +75,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+    @Override // Significa que es un metodo sobrecargado
     public void onClick(View v) {
 
         Random numeroSuerte = new Random();
+        //fmt.format("%08d",numeroSuerte.nextInt(rango) );
+        String a;
+        String b;
 
+        a = String.format("%010d", Integer.parseInt( "1111" ) );
+        //Integer.toString( numeroSuerte.nextInt(rango) )
         switch (v.getId()) {
 
             case R.id.btnPrincipal:
 
-                edtTxt.setText("Tú número de la suerte es: " + Integer.toString(numeroSuerte.nextInt(9999)));
+                //edtTxt.setText("Tú número de la suerte es: " + a );
+                b = Integer.toString(numeroSuerte.nextInt(rango)) ;
+                edtTxt.setText("Tú número de la suerte es: " +  String.format(param_0, Integer.parseInt( b ) ) );
 
                 break;
 
@@ -82,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 jugada2.setChecked(false);
                 jugada3.setChecked(false);
+                rango = 99;
+                param_0 = "%02d";
 
                 break;
 
@@ -89,6 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 jugada1.setChecked(false);
                 jugada3.setChecked(false);
+                rango = 999;
+                param_0 = "%03d";
 
                 break;
 
@@ -96,6 +117,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 jugada1.setChecked(false);
                 jugada2.setChecked(false);
+                rango = 9999;
+                param_0 = "%04d";
 
                 break;
         }

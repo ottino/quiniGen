@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="btn_principal">ver tú número de la suerte</string>
     <string name="btn_save">Guardar tu jugada</string>
-    <string name="chkb_j1">Apuesta en Quini6</string>
-    <string name="chkb_j2">Apuesta en Loto</string>
-    <string name="chkb_j3">Apuesta en Brinco</string>
+    <string name="chkb_j1">Dos números</string>
+    <string name="chkb_j2">Tres números</string>
+    <string name="chkb_j3">Cuatro números</string>
 </resources>
